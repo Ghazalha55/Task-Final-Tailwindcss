@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tailwind</title>
+    <link rel="stylesheet" href="build/tailwind.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-gray-100 container mx-auto max-w-7xl ">
+    <div class="p-1 md:p-4 lg:md-6">
+        <!-- cart title  -->
+        <div class="md:mr-14">
+            <h1 class="font-black text-center mt-8 text-slate-800 text-xl md:text-2xl md:text-right">سبد دوره های شما
+            </h1>
+        </div>
+
+        <!-- course items in cart-->
+        <div class=" p-4 md:flex flex-row md:gap-x-8">
+            <div class="mt-14 md:flex-1 justify-between  " x-data="{
+                courses:[
+                {id:1, title:'دوره حرفه ای متخصص ری اکت',time:'45 ساعت',stuNumber:'13000دانشجو',session:'270 جلسه',challenge:'چالشهای هفتگی',price:'6,290,000'},
+                {id:2, title:'دوره حرفه ای رسپانسیو',time:'55 ساعت',stuNumber:'12000دانشجو',session:'170 جلسه',challenge:'چالشهای هفتگی',price:'6,290,000'},               
+                ]
+            }">
+                <template x-for="course in courses" :key="course.id">
+                    <div class="bg-white rounded-2xl p-2   md:w-full md:h-40 flex gap-x-4 md:shadow-sm mb-6">
+                        <div class="flex items-center justify-start md:p-2">
+                            <img class="md:w-44 md:h-auto " src="/assets/images/Rectangle 21.svg" alt="">
+                        </div>
+
+                        <div class="hidden md:flex flex-col  justify-center  w-80 p-8 ">
+                            <h2 class="md:text-sm lg:text-lg font-black text-slate-800 md:mb-2" x-text="course.title">
+                            </h2>
+
+                            <div class="flex  items-center gap-x-5 text-xs text-slate-400 mb-2">
+                                <div class="flex  ">
+                                    <img src="/assets/images/Clock.svg" alt="">
+                                    <span class="mr-1" x-text="course.time"></span>
+                                </div>
+                                <div class="flex ">
+                                    <img class="" src="/assets/images/Clock.svg" alt="">
+                                    <span class="mr-1" x-text="course.stuNumber"></span>
+                                </div>
+                            </div>
+
+                            <div class="flex  items-center gap-x-5 text-xs text-slate-400">
+                                <div class="flex ">
+                                    <img src="/assets/images/Presentation.svg" alt="">
+                                    <span class="mr-1" x-text="course.session"></span>
+                                </div>
+                                <div class="flex text-orange-300 ">
+                                    <img class="" src="/assets/images/cup.svg" alt="">
+                                    <span class="" x-text="course.challenge"></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="flex flex-col justify-evenly md:mr-10 ">
+                            <h2 class="text-xs md:text-lg lg:text-xl md:hidden font-black text-slate-800"
+                                x-text="course.title"></h2>
+                            <div class="hidden md:flex gap-x-6 mb-4">
+                                <img class="" src="/assets/images/Frame 207.png" alt="">
+                                <div>
+                                    <p class="text-slate-300 text-xs">مدرس دوره</p>
+                                    <span class="text-slate-800  font-bold text-sm">صاحب محمدی</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center md:mt-5">
+                                <span class="text-blue-700 font-extrabold text-sm md:text-base lg:text-lg"
+                                    x-text="course.price"></span>
+                                <span class="mr-3 text-slate-400 text-xs">تومان</span>
+                                <span class="mr-4 rounded-2xl border border-gray-300 p-2 text-red-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+            <!-- payment -->
+            <div class="bg-white  mt-14 flex flex-col rounded-2xl md:w-1/3 md:h-fit md:max-w-sm md:shadow-sm">
+                <div class="flex items-center p-5 ">
+                    <span>
+                        <img src="/assets/images/receipt-text.svg" alt="">
+                    </span>
+                    <span class="mr-3 text-sm md:text-base lg:text-lg font-bold">پرداخت</span>
+                </div>
+                <hr>
+                <div class="p-4">
+                    <div class=" flex items-center justify-between mb-5">
+                        <span class="font-bold text-sm md:text-base lg:text-lg  text-slate-500">جمع دوره ها</span>
+                        <div class="flex items-center text-blue-700 font-extrabold ">
+                            <span class="text-sm md:text-base lg:text-lg">4,250,000</span>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="4.5" stroke="currentColor" class="size-3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between ">
+                        <span class="font-bold text-sm md:text-base lg:text-lg text-slate-500">تخفیف ها</span>
+                        <div class="flex items-center">
+                            <span class="text-red-600 font-bold text-sm md:text-base lg:text-lg">750,000</span>
+                            <span class="text-red-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="4.5"
+                                    stroke="currentColor" class="size-3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-dashed">
+                <div class="p-4 mb-4">
+                    <div class="text-center mb-5 mt-5">
+                        <span class="font-bold text-sm md:text-base  text-slate-400">کد تخفیف دارم!</span>
+                    </div>
+                    <button class="bg-blue-500 w-full text-white rounded-2xl text-sm md:text-sm lg:text-base p-4">پرداخت
+                        3,500,000 <span class="text-xs">تومان</span></button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
