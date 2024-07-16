@@ -18,7 +18,7 @@
         </div>
 
         <!-- course items in cart-->
-        <div class=" p-4 md:flex flex-row md:gap-x-8">
+        <div class=" p-4 md:flex md:flex-col lg:flex-row md:gap-x-8  ">
             <div class="mt-14 md:flex-1 justify-between  " x-data="{
                 courses:[
                 {id:1, title:'دوره حرفه ای متخصص ری اکت',time:'45 ساعت',stuNumber:'13000دانشجو',session:'270 جلسه',challenge:'چالشهای هفتگی',price:'6,290,000'},
@@ -26,7 +26,7 @@
                 ]
             }">
                 <template x-for="course in courses" :key="course.id">
-                    <div class="bg-white rounded-2xl p-2   md:w-full md:h-40 flex gap-x-4 md:shadow-sm mb-6">
+                    <div class="bg-white rounded-2xl p-2   md:w-full md:h-40 flex gap-x-4 md:shadow-sm mb-6 ">
                         <div class="flex items-center justify-start md:p-2">
                             <img class="md:w-44 md:h-auto " src="/assets/images/Rectangle 21.svg" alt="">
                         </div>
@@ -87,7 +87,7 @@
 
             </div>
             <!-- payment -->
-            <div class="bg-white  mt-14 flex flex-col rounded-2xl md:w-1/3 md:h-fit md:max-w-sm md:shadow-sm">
+            <div class="bg-white  mt-14 flex flex-col rounded-2xl md:w-2/3 lg:w-1/3 md:h-fit md:max-w-sm md:shadow-sm">
                 <div class="flex items-center p-5 ">
                     <span>
                         <img src="/assets/images/receipt-text.svg" alt="">
